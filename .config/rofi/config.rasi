@@ -1,0 +1,19 @@
+configuration {
+    modi:                       "drun,run";
+    font:                       "Fira Code SemiBol 8";
+    show-icons:                 true;
+    display-drun:               "";
+	display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+    hover-select:               true;
+    me-select-entry:            "MouseSecondary";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+	dpi:						1;
+    
+}
+
+
+@import "~/.config/rofi/solarized-dark.rasi"

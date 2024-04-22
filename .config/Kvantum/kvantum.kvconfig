@@ -1,0 +1,5 @@
+[General]
+theme=Tokyo-Night
+
+[Applications]
+Default=google-chrome-stable
