@@ -40,34 +40,34 @@ notify_user() {
 # Increase Volume
 inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
-        pamixer -u && notify_user
+        pamixer -u # && notify_user
     fi
-    pamixer -i 5 && notify_user
+    pamixer -i 5 # && notify_user
 }
 
 # Decrease Volume
 dec_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
-        pamixer -u && notify_user
+        pamixer -u # && notify_user
     fi
-    pamixer -d 5 && notify_user
+    pamixer -d 5 # && notify_user
 }
 
 # Toggle Mute
 toggle_mute() {
 	if [ "$(pamixer --get-mute)" == "false" ]; then
-		pamixer -m && notify-send -e -u low -i "$iDIR/volume-mute.png" "Volume Switched OFF"
+		pamixer -m #&& notify-send -e -u low -i "$iDIR/volume-mute.png" "Volume Switched OFF"
 	elif [ "$(pamixer --get-mute)" == "true" ]; then
-		pamixer -u && notify-send -e -u low -i "$(get_icon)" "Volume Switched ON"
+		pamixer -u # && notify-send -e -u low -i "$(get_icon)" "Volume Switched ON"
 	fi
 }
 
 # Toggle Mic
 toggle_mic() {
 	if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
-		pamixer --default-source -m && notify-send -e -u low -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
+		pamixer --default-source -m # && notify-send -e -u low -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
 	elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-		pamixer -u --default-source u && notify-send -e -u low -i "$iDIR/microphone.png" "Microphone Switched ON"
+		pamixer -u --default-source u #&& notify-send -e -u low -i "$iDIR/microphone.png" "Microphone Switched ON"
 	fi
 }
 # Get Mic Icon
@@ -100,17 +100,17 @@ notify_mic_user() {
 # Increase MIC Volume
 inc_mic_volume() {
     if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-        pamixer --default-source -u && notify_mic_user
+        pamixer --default-source -u #&& notify_mic_user
     fi
-    pamixer --default-source -i 5 && notify_mic_user
+    pamixer --default-source -i 5 #&& notify_mic_user
 }
 
 # Decrease MIC Volume
 dec_mic_volume() {
     if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-        pamixer --default-source -u && notify_mic_user
+        pamixer --default-source -u #&& notify_mic_user
     fi
-    pamixer --default-source -d 5 && notify_mic_user
+    pamixer --default-source -d 5 #&& notify_mic_user
 }
 
 # Execute accordingly

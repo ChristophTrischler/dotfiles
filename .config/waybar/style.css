@@ -6,7 +6,7 @@
 	font-weight: bold;
 	min-height: 0;
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-	font-size: 97%;
+	font-size: 100%;
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 	padding: 1px;
 }
@@ -24,9 +24,6 @@ window#waybar.empty #window {
 }
 
 tooltip {
-	color: white;
-	background: #1e1e2e;
-	opacity: 0.8;
 	border-radius: 10px;
 	border-width: 1px;
 	border-style: solid;
@@ -70,6 +67,7 @@ tooltip label {
 
 /*-----modules indv----*/
 #workspaces button {
+
 	box-shadow: none;
 	text-shadow: none;
 	padding: 0px;
@@ -90,7 +88,9 @@ tooltip label {
 }
 
 #workspaces button.active {
-	color: white;
+	color: #fdf6e3;
+
+	/*color: white;*/
 	padding-left: 8px;
 	padding-right: 8px;
 	animation: gradient_f 20s ease-in infinite;
@@ -145,6 +145,9 @@ tooltip label {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
+		color: #fdf6e3;
+	background: #002b36;
+
 	padding-top: 3px;
 	padding-bottom: 3px;
 	padding-right: 6px;

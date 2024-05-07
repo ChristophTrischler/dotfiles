@@ -4,9 +4,7 @@
 # Note: Scripts are looking for keywords Light or Dark except for wallpapers as the are in a separate folders
 
 # Paths
-wallpaper_base_path="$HOME/Pictures/wallpapers/Dynamic-Wallpapers"
-dark_wallpapers="$wallpaper_base_path/Dark"
-light_wallpapers="$wallpaper_base_path/Light"
+wallpaper_path="$HOME/Pictures/wallpapers"
 hypr_config_path="$HOME/.config/hypr"
 swaync_style="$HOME/.config/swaync/style.css"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
@@ -23,16 +21,6 @@ swww query || swww init
 swww="swww img"
 effect="--transition-bezier .43,1.19,1,.4 --transition-fps 60 --transition-type grow --transition-pos 0.925,0.977 --transition-duration 2"
 
-# Determine current theme mode
-if [ "$(cat $HOME/.cache/.theme_mode)" = "Light" ]; then
-    next_mode="Dark"
-    # Logic for Dark mode
-    wallpaper_path="$dark_wallpapers"
-else
-    next_mode="Light"
-    # Logic for Light mode
-    wallpaper_path="$light_wallpapers"
-fi
 
 # Function to update theme mode for the next cycle
 update_theme_mode() {

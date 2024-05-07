@@ -18,19 +18,17 @@
 
 "modules-left": [
 	"hyprland/workspaces#roman",
-	"mpris",
-	"custom/swaync",
-	"custom/updater", 
+	"group/motherboard",
 	],
 "modules-center": [
 	"clock", 
 	],
 "modules-right": [
-	"group/motherboard",
-	"group/laptop",
+	"mpris",
 	"group/audio",
+	"group/laptop", 
 	"group/connections",
-	"custom/power",
+	"custom/swaync",
 	],
 
 }

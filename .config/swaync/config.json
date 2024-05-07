@@ -29,11 +29,11 @@
     "hide-on-action": true,
     "script-fail-notify": true,
     "widgets": [
-       	"dnd",
+        "dnd",
         "buttons-grid",
-		"mpris",
+        "mpris",
     	"volume", 
-   	 	"backlight",
+        "backlight",
         "title",
         "notifications"
     ],
@@ -93,6 +93,10 @@
                 {
                     "label": "󰂯",
                     "command": "blueman-manager"
+                }, 
+                {
+                    "label": "󰖩", 
+                    "command": "nm-connection-editor"
                 }
             ]
         }

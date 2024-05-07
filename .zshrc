@@ -1,11 +1,8 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -24,24 +21,37 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(ssh-agent)"
+
+for FILE in ~/.ssh/*
+do
+  LINE=$(head -n 1 "$FILE")
+  if [[ "$LINE" == "-----BEGIN OPENSSH PRIVATE KEY-----" ]]
+  then 
+    ssh-add "$FILE"
+  fi 
+done   
+
 
 clear
 pfetch
 
 
 export PATH=/home/me/.cargo/bin:/home/me/.local/bin:/home/me/go/bin:$PATH
+export SUDO_EDITOR="nvim"
 
-#bindkey '^H' backward-kill-word
+
+bindkey '^H' backward-kill-word
 
 
 
 alias v=nvim
 alias c="clear && pfetch"
 
-
 eval "$(zoxide init --cmd cd zsh)"
+
+#eval "$(starship init zsh)"

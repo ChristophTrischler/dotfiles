@@ -1,6 +1,6 @@
 configuration {
     modi:                       "drun,run";
-    font:                       "Fira Code SemiBol 8";
+    font:                       "Fira Code SemiBol 12";
     show-icons:                 true;
     display-drun:               "";
 	display-run:                "";

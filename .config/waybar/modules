@@ -139,7 +139,6 @@
       "cpu",
       "memory",
       "temperature",
-      "disk",
       ]	
 },
   
