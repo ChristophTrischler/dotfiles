@@ -1,32 +1,34 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+source "${ZINIT_HOME}/zinit.zsh"
 
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+zinit ice depth"1" # git clone depth
+zinit light romkatv/powerlevel10k
 
-plugins=(
-    git
-    archlinux
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
+# Add in snippets
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::tmux
 
-source $ZSH/oh-my-zsh.sh
-
-
-source $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+# SSH
 eval "$(ssh-agent)"
-
 for FILE in ~/.ssh/*
 do
   LINE=$(head -n 1 "$FILE")
@@ -35,24 +37,31 @@ do
     ssh-add "$FILE"
   fi 
 done   
+clear 
 
+zinit cdreplay -q 
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+nerdfetch
 
-clear
-pfetch
+# Completion styling
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
+zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
+zstyle ":completion:*" menu no
+zstyle ":fzf-tab:complete:cd:*" fzf-preview "ls --color $realpath"
+zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "ls --color $realpath"
 
-
-export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
-export SUDO_EDITOR="nvim"
-export PF_CUSTOM_LOGOS=$HOME/.config/pfetch_logos
-
-
-bindkey '^H' backward-kill-word
-
-
-
+# Aliases
+alias ls=lsd
+alias vim=nvim
 alias v=nvim
-alias c="clear && pfetch"
+alias c="clear && nerdfetch"
 
+# Shell integrations
+eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-#eval "$(starship init zsh)"
+PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
+SUDO_EDITOR="nvim"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
