@@ -1,0 +1,19 @@
+{
+  "prefs": {
+    "ChangelogVersions": "{\"v0.2024.04.23.08.01.stable_03\":true,\"v0.2024.05.14.08.01.stable_04\":true}",
+    "AliasExpansionBannerSeen": "true",
+    "SelectedSystemThemes": "{\"light\":\"Light\",\"dark\":\"SolarizedDark\"}",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "AutosuggestionAcceptedCount": "2",
+    "NotebookFontSize": "14.0",
+    "InputMode": "\"PinnedToTop\"",
+    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"ThemePicker\"},{\"Hint\":\"CreateBlock\"}]",
+    "ShowWarningBeforeQuitting": "false",
+    "FontSize": "9.0",
+    "ExperimentId": "cd569cfa-85d2-4a64-98f1-be458926b8dd",
+    "HasAutoOpenedWelcomeFolder": "true",
+    "SystemTheme": "false",
+    "AIAssistantRequestLimitInfo": "{\"limit\":40,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2024-05-25T16:09:35.337508Z\"}",
+    "Theme": "\"SolarizedDark\""
+  }
+}

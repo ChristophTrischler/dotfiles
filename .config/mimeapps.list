@@ -1,0 +1,8 @@
+[Added Associations]
+text/plain=nvim.desktop;
+application/x-xz-compressed-tar=userapp-unzip-9R83N2.desktop;
+application/pdf=firefox.desktop;org.pwmt.zathura-pdf-mupdf.desktop;
+
+[Default Applications]
+application/x-xz-compressed-tar=userapp-unzip-9R83N2.desktop
+x-scheme-handler/mailspring=Mailspring.desktop

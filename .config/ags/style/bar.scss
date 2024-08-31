@@ -1,0 +1,91 @@
+.network-icon {
+}
+
+.bar {
+  margin: 8px;
+  margin-top: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #001e26;
+  color: #839496;
+  font-size: 16px;
+  min-height: 30px;
+  border: 0px solid #000;
+  box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.14)
+
+}
+
+window {
+  color: #839496;
+  font-size: 16px;
+}
+
+.art {
+  background-size: cover;	
+  background-position: center;
+  min-height: 22px;
+  min-width: 22px;
+  margin: 3px;
+  border-radius: 100px;
+}
+
+.media {
+  font-size: 14px;
+}
+
+.workspace.focused {
+  border-radius: 30px;
+  background: #002b36;
+  color: #d33682;
+}
+
+
+.workspace {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.workspace:hover {
+  border-radius: 30px;
+  background: #002b36;
+}
+
+.volume {
+  font-size: 20px;
+}
+
+.volume_slider, .brightness_slider {
+  min-width: 100px;
+    border-radius: 10px;
+    color: #d33682;
+}
+
+.volume_slider trough, .brightness_slider trough {
+    min-height: 5px;
+    border-radius: 10px;
+
+    background-color: #002b36; 
+}
+
+.volume_slider highlight, .brightness_slider highlight {
+    background-color: #d33682;
+    border-radius: 10px;
+}
+
+scale slider {
+    all: unset;
+}
+
+
+.clock {
+  color: #d33682;
+}
+
+
+tooltip {
+  background: #002b36;
+  color: #839496;
+
+  border-radius: 10px;
+}
