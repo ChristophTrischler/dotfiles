@@ -41,8 +41,9 @@ clear
 pfetch
 
 
-export PATH=/home/me/.cargo/bin:/home/me/.local/bin:/home/me/go/bin:$PATH
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
 export SUDO_EDITOR="nvim"
+export PF_CUSTOM_LOGOS=$HOME/.config/pfetch_logos
 
 
 bindkey '^H' backward-kill-word

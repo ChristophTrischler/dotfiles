@@ -34,38 +34,6 @@ tooltip label {
 	color: #cdd6f4;
 }
 
-/*-----module groups----*/
-/*
-.modules-right {
-	background-color: black;
-	color: white;
-	border-width: 1px;
-	border-style: solid;
-	border-color: white;
-	border-radius: 10px;
-}
-
-.modules-center {
-	background-color: black;
-	color: white;
-	border-width: 1px;
-	border-style: solid;
-	border-color: white;
-	border-radius: 10px;
-
-}
-
-.modules-left {
-	background-color: black;
-	color: white;
-	border-width: 1px;
-	border-style: solid;
-	border-color: white;
-	border-radius: 10px;
-}
-*/
-
-/*-----modules indv----*/
 #workspaces button {
 
 	box-shadow: none;
@@ -145,15 +113,13 @@ tooltip label {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
-		color: #fdf6e3;
+	color: #fdf6e3;
 	background: #002b36;
-
+	background: black;
 	padding-top: 3px;
 	padding-bottom: 3px;
 	padding-right: 6px;
 	padding-left: 6px;
-	color: white;
-	background: black;
 	border: 1px solid black;
 	border-radius: 10px;
 }
