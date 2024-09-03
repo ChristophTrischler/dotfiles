@@ -60,8 +60,9 @@ alias c="clear && nerdfetch"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
-SUDO_EDITOR="nvim"
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
+export SUDO_EDITOR="nvim"
+export EDITOR="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
